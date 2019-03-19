@@ -1,19 +1,14 @@
+// this uses an anonymous function. it's an IIFE, it's a module
 
-// (function(exports) {
-//     // var EXCLAMATION_MARK_COUNT = 5
-  
-//     function exclaim(string) {
-//       return string + "!".repeat(EXCLAMATION_MARK_COUNT);
-//     };
-  
-//     exports.exclaim = exclaim;
-//   })(this);
+(function(exports) {
 
+    function Note(text) {
+        this.text = text;
+    }
+    
+    Note.prototype.show = function() {
+        return this.text
+    }
+    exports.Note = Note;
 
-function Note(text) {
-    this.text = text;
-}
-
-Note.prototype.show = function() {
-    return this.text
-}
+  })(this);
