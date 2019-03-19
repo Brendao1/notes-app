@@ -1,0 +1,14 @@
+var list1 = new NoteList();
+
+list1.add("Pancakes");
+
+
+list1.listView();
+
+
+var view1 = new NoteListView(list1); 
+
+view1.toHTML();  <<<< this outputs "Pancakes" in an alert window :) 
+
+
+
