@@ -15,6 +15,17 @@ function testNoteListView() {
                 + note2 + "<br>"
                 + note3 + "<br></p>";
     assert.isTrue(view1.toHTML() === output);
+
+};
+
+function testNoNotes() {
+    var list1 = new NoteList();
+    var view1 = new NoteListView(list1);
+
+    assert.isTrue(view1.toHTML() === "<p></p>");
+
 };
 
 testNoteListView();
+
+testNoNotes();
