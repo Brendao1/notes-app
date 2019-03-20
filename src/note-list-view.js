@@ -8,13 +8,13 @@
         let string = "<p>";
 
         this.notelist.notes.forEach(note => {
-            // window.alert(note.show());
-            document.write(string += note.show() + "<br>"); // soon deprecated
-            // string += note.show() + "<br>";
+            // document.write(string += note.show() + "<br>"); // soon deprecated
+            string += note.show() + "<br>"
         })
         string += "</p>";
-        console.log(string)
+
+        document.write(string);
         return string
-    };
+    }
     exports.NoteListView = NoteListView
 })(this);
