@@ -26,6 +26,18 @@ function testNoNotes() {
 
 };
 
-testNoteListView();
+function testOneNote() {
+    var list1 = new NoteList();
+    var view1 = new NoteListView(list1);
+    var note1 = ("Ferraris are awesome")
+    
+    list1.add(note1)
 
+    let output_for_one_note = "<p>" + note1 + "<br></p>"
+    assert.isTrue(view1.toHTML() === output_for_one_note);
+
+};
+
+testNoteListView();
 testNoNotes();
+testOneNote();
