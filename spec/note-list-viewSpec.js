@@ -9,7 +9,7 @@ function testNoteListView() {
     // list1.add(note2)
 
     let output = "<p>Ferraris are awesome<br></p>"
-    assert.isTrue(view1.toHTML() === "<p>Ferraris are awesome<br></p>");
+    assert.isTrue(view1.toHTML() === output);
 };
 
 testNoteListView();
