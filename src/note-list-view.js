@@ -16,6 +16,5 @@
         document.write(string);
         return string
     }
-
     exports.NoteListView = NoteListView
 })(this);

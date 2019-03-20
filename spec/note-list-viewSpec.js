@@ -35,7 +35,6 @@ function testOneNote() {
 
     let output_for_one_note = "<p>" + note1 + "<br></p>"
     assert.isTrue(view1.toHTML() === output_for_one_note);
-
 };
 
 testNoteListView();
