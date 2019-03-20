@@ -1,23 +1,23 @@
 (function(exports) {
 
     function NoteListView(NoteList) {
-        this.NoteList = NoteList
+        this.notelist = NoteList
     };
 
-    NoteListView.prototype.toHTML = function() {
+    NoteListView.prototype.toHTML = function () {
+        let string = "<p>";  // why does this have to be declared outside the function?
 
-        this.NoteList.notes.forEach(note => {
-            // stringStart = <ul><li><div>  
-            string = " "
+        this.notelist.notes.forEach(note => {
             // console.log(note.show());
-            // document.write(string + note.show());
-            window.alert(note.show());
+            // window.alert(note.show());
             // document.write(note.show());  // soon deprecated
-
-
+            document.write(string += note.show() + "<br>");
+            // string += note.show() + "<br>";
         })
+        string += "</p>";
+        console.log(string)
+        return string
     };
-
 
     exports.NoteListView = NoteListView
 })(this);
