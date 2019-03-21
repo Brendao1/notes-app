@@ -2,7 +2,8 @@
 //on load, create the app
 window.addEventListener('load', function() {
 
-    var controller = new Controller()
+    var noteList = new NoteList()
+    var controller = new Controller(noteList, 'Testerrrr');
     // controller.howdy()
     controller.updateDOM()
 })
