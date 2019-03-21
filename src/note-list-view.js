@@ -11,10 +11,11 @@
             // document.write(string += note.show() + "<br>"); // soon deprecated
             string += note.show() + "<br>"
         })
-        string += "</p>";
+        // string += "</p>";
 
         document.write(string);
         return string
     }
+
     exports.NoteListView = NoteListView
 })(this);
