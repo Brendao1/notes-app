@@ -5,15 +5,14 @@
     };
 
     NoteListView.prototype.toHTML = function () {
-        let string = "<p>";
+        
+        var string = "<p>";
 
-        this.notelist.notes.forEach(note => {
-            // document.write(string += note.show() + "<br>"); // soon deprecated
+        this.notelist.listView().forEach(function(note) {
             string += note.show() + "<br>"
         })
-        // string += "</p>";
+        string += "</p>";
 
-        document.write(string);
         return string
     }
 

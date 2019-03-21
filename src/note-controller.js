@@ -1,18 +1,14 @@
 (function(exports) {
 
-    function Controller(list) {
-        this.note = new Note("Favourite drink: seltzer")
+    function Controller() {
         this.list = new NoteList()
-        this.view = new NoteListView(list)
+        this.list.add("Favourite drink: seltzer")
+        this.view = new NoteListView(this.list)
     }
+    
     Controller.prototype = {
         howdy: function() {
             document.getElementById("app").innerHTML = "<p>howdy</p>"
-        },
-        // adds note to the NoteListView
-        add_note: function() {
-            this.list.add(this.note) 
-            console.log(this.list)         
         },
 
         updateDOM: function() {
