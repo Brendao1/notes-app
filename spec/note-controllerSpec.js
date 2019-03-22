@@ -1,19 +1,37 @@
+//doubling NoteList and Note 
+
+function NoteDouble(text) {
+    this.text  = text
+}
+
+NoteDouble.prototype.show = function() {
+    return this.text
+}
+
+function NoteListDouble() {
+    this.notes = []
+}
+
+NoteListDouble.prototype.listView = function() {
+    return this.notes
+}
+
+NoteListDouble.prototype.add = function(note) {
+    this.notes.push(note)
+}
+
+let noteDouble = new NoteDouble("Favourite spice: cinnamon")
+let noteListDouble = new NoteListDouble()
+
 it("test the note controller", function() {
-
-    let list1 = new NoteList()
-    let note1 = new Note ("Favourite spice: cinnamon")
-    list1.add(note1)
-
-    var output = "Favourite spice: cinnamon"
-
-    var controller = new Controller(list1, note1)
-
-    // making the function return a specific value
-    controller.updateDOM = function() {
-        return "Favourite spice: cinnamon"
-    };
-
-    assert.isTrue(controller.updateDOM() === output);
+window.addEventListener('load', function() {
+    var controller = new Controller(noteListDouble)
+    controller.addNote(noteDouble)
+    controller.updateDOM()  // need to call here because updateDOM doesn't return anything
+    var output = "<p>Favourite spice: cinnamon<br></p>"
+    assert.isEqual(document.getElementById('app').innerHTML, output);
+})
+   
 
 })
 

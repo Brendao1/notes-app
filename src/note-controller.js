@@ -1,6 +1,6 @@
 (function(exports) {
 
-    function Controller(noteList, note) {
+    function Controller(noteList) {
         this.list = noteList
         this.list.add("Favourite drink: seltzer")
         this.list.add("Favourite food: pretzels")
@@ -15,6 +15,10 @@
 
         updateDOM: function() {
             document.getElementById("app").innerHTML = this.view.toHTML()
+        },
+
+        addNote: function(note) {
+            this.list.add(note)
         }
     }
 
