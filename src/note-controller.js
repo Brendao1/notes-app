@@ -2,7 +2,9 @@
 
     function Controller(noteList, note) {
         this.list = noteList
-        this.list.add(note)
+        this.list.add("Favourite drink: seltzer")
+        this.list.add("Favourite food: pretzels")
+        // this.list.add(note)
         this.view = new NoteListView(this.list)
     }
     
