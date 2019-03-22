@@ -7,4 +7,4 @@ function testNoteListModel() {
     // assert.isTrue(noteList.notes == []);
 };
 
-testNoteListModel();
+// testNoteListModel();

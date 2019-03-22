@@ -10,6 +10,7 @@
 
         this.notelist.listView().forEach(function(note) {
             string += note.show() + "<br>"
+            console.log("LOG:" + note.show())
         })
         string += "</p>";
 

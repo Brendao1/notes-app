@@ -3,4 +3,5 @@ function testNote() {
     assert.isTrue(note.show() === "Javascript is my favourite language");
   };
 
-  testNote()
+  // testNote()
+  

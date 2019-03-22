@@ -1,27 +1,44 @@
+
+
+function NoteDouble() {
+}
+
+NoteDouble.prototype.show = function() {
+    return "TESTING WITH DOUBLES"
+}
+
+function NoteListDouble() {
+    this.notes = []
+}
+
+
+NoteListDouble.prototype.add = function(text) {
+    this.notes.push(new NoteDouble(text))
+} 
+
+NoteListDouble.prototype.listView = function() {
+    return this.notes
+}
+
+
 function testNoteListView() {
-    var list1 = new NoteList();
+    var list1 = new NoteListDouble();
 
-    var note1 = "Ferraris are awesome"
-    var note2 = "Roses are gorgeous"
-    var note3 = "The Sky is depth"
 
-    list1.add(note1)
-    list1.add(note2)
-    list1.add(note3)
+    var NoteDouble = new NoteDouble()
+    list1.add(new NoteDouble)
+
 
     var view1 = new NoteListView(list1);
 
-    // var note1 = ("Favourite drink: seltzer")
     let output = 
-                "<p>" + note1 + "<br>"
-                + note2 + "<br>"
-                + note3 + "<br></p>";
+                "<p>" + NoteDouble.show() +  "<br></p>";
     assert.isTrue(view1.toHTML() === output);
 
 };
 
 function testNoNotes() {
-    var list1 = new NoteList();
+    var list1 = new NoteListDouble();
     var view1 = new NoteListView(list1);
 
     assert.isTrue(view1.toHTML() === "<p></p>");
@@ -29,16 +46,18 @@ function testNoNotes() {
 };
 
 function testOneNote() {
-    var list1 = new NoteList();
-    var view1 = new NoteListView(list1);
-    var note1 = ("Ferraris are awesome")
-    
-    list1.add(note1)
 
-    let output_for_one_note = "<p>" + note1 + "<br></p>"
+    var NoteDouble2 = new NoteDouble()
+
+    var list1 = new NoteListDouble();
+    var view1 = new NoteListView(list1);
+    
+    list1.add(new NoteDouble)
+
+    let output_for_one_note = "<p>" + NoteDouble2.show() + "<br></p>"
     assert.isTrue(view1.toHTML() === output_for_one_note);
 };
 
-testNoteListView();
-testNoNotes();
+// testNoteListView();
+// // testNoNotes();
 testOneNote();
